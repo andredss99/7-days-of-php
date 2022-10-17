@@ -1,7 +1,5 @@
 <?php
 
-require_once './controller.php';
-
 $page = $_GET['page'] ?? 'login';
 
 switch ($page) {
@@ -13,7 +11,7 @@ switch ($page) {
         do_register();
         break;
 
-    case 'not_found':
+    default:
         do_not_found();
         break;
 }
