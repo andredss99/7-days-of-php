@@ -1,6 +1,10 @@
 <?php
 
 function do_register() {
+    if (isset($_GET['from'])) {
+        crud_create($_POST);
+    }
+
     render_view('register');
 }
 
