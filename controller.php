@@ -1,11 +1,14 @@
 <?php
 
 function do_register() {
-    if (isset($_GET['from'])) {
+    if (!empty($_POST)) {
+        unset($_POST['person']['password-confirm']);
         crud_create($_POST);
+        header('Location: /?page=login');
     }
-
-    render_view('register');
+    else {
+        render_view('register');
+    }
 }
 
 function do_login() {
